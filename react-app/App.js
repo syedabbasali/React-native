@@ -10,7 +10,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text>Enter name: </Text>
+      <Text>Enter Your Name: </Text>
       <TextInput 
       multiline
 

@@ -20,7 +20,7 @@ export default function App() {
 
       
 
-      <Text>Enter age: </Text>
+      <Text>Enter Your Age: </Text>
       <TextInput 
       keyboardType='numeric'
       style={styles.input}

@@ -17,6 +17,9 @@ const styles =StyleSheet.create({
         borderColor: '#bbb',
         borderWidth :1,
         borderStyle:'solid',
-        borderRadius: 10
+        borderRadius: 10,
+        textTransform: 'capitalize',
+        fontFamily:'Rockwell'
+        
     }
 })

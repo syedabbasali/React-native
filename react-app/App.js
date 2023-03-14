@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {
-  StyleSheet,Text, View,FlatList } from "react-native";
+  StyleSheet,Text, View,FlatList,Al } from "react-native";
 import Header from "./components/header";
 import TodoItem from "./components/todoitem";
 import AddTodo from "./components/addTodo";
@@ -21,12 +21,18 @@ setTodos((prevTodos) => {
 }
 
 const submitHandler = (text) => {
-  setTodos((prevTodos) => {
-return [
-  { text: text, key: Math.random().toString() },
-  ...prevTodos
-];
-  })
+
+  if(text.length >3 ){
+    setTodos((prevTodos) => {
+      return [
+        { text: text, key: Math.random().toString() },
+        ...prevTodos
+      ];
+        })
+  }else{
+
+  }
+ 
 }
 
   return (
@@ -50,13 +56,14 @@ return [
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#d0bdf4",
   },
   content:{
     padding : 40,
   },
   list:{
     marginTop :20,
+    fontFamily:'sans-serif'
   }
 });
 

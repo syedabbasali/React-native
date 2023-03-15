@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import {
-  StyleSheet,Text, View,FlatList,Al } from "react-native";
+  StyleSheet,Text, View,FlatList, Alert,TouchableWithoutFeedback,Keyboard } from "react-native";
 import Header from "./components/header";
 import TodoItem from "./components/todoitem";
 import AddTodo from "./components/addTodo";
+import SandBox from "./components/sandbox";
 
 
 export default function App()  {
@@ -30,12 +31,18 @@ const submitHandler = (text) => {
       ];
         })
   }else{
-
+    Alert.alert('OOPS :(' ,'Event should be greater than 3 letter', [
+      {text: 'Understood', onPress: () => console.log('alert closed')}
+    ])
   }
  
 }
-
   return (
+    // <SandBox />
+    <TouchableWithoutFeedback onPress={() => {
+      Keyboard.dismiss();
+      console.log('dismissed keyboard')
+    }}>
     <View style={styles.container}>
       <Header />
      <View style ={styles.content}>
@@ -50,6 +57,7 @@ const submitHandler = (text) => {
       </View>
      </View>
     </View>
+    </TouchableWithoutFeedback>
   ); 
 }
 
@@ -60,10 +68,15 @@ const styles = StyleSheet.create({
   },
   content:{
     padding : 40,
+    flex: 1,
   },
   list:{
+    flex: 1,
+    paddingLeft:10,
+    paddingRight:10,
     marginTop :20,
-    fontFamily:'sans-serif'
+    
+    
   }
 });
 
